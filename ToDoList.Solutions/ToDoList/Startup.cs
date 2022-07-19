@@ -2,7 +2,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extenstions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
+
 
 namespace ToDoList
 {
@@ -11,19 +12,19 @@ namespace ToDoList
     public Startup(IWebHostEnvironment env)
     {
       var builder = new ConfigurationBuilder()
-        .SettBasePath(env.ContntRootPath)
-        .AddEnvironmentVariables();
+          .SetBasePath(env.ContentRootPath)
+          .AddEnvironmentVariables();
       Configuration = builder.Build();
     }
   
-  public IConfigurrationRoot Configuraion { get; }
+  public IConfigurationRoot Configuration { get; }
 
   public void ConfigureServices(IServiceCollection services)
   {
     services.AddMvc();
   }
 
-  public void Connfigure(IApplicattionBuilder app)
+  public void Configure(IApplicationBuilder app)
   {
     app.UseDeveloperExceptionPage();
     app.UseRouting();
@@ -35,7 +36,7 @@ namespace ToDoList
 
     app.Run(async (context) =>
     {
-      await context.Respons.WtireAsync("Hello World!");
+      await context.Response.WriteAsync("Hello World!");
     });
   }
   }
