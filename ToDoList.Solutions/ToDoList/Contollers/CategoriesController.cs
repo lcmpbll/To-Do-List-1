@@ -50,7 +50,7 @@ namespace ToDoList.Controllers
       List<Item> categoryItems = foundCategory.Items;
       model.Add("items", categoryItems);
       model.Add("category", foundCategory);
-      return RedirectToAction("Show", model);
+      return View("Show", model);
     }
   }
 }
