@@ -1,4 +1,6 @@
 .DS_Store/
-bin/
+*bin/
 obj/
 .vscode
+
+ToDoList.Solutions/ToDoList/bin/Debug/net5.0/ToDoList.Views.pdb
