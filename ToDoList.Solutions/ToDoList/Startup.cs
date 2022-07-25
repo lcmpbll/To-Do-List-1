@@ -16,35 +16,33 @@ namespace ToDoList
           .AddEnvironmentVariables();
       Configuration = builder.Build();
     }
-
-  public static class DBConfiguration
-  {
-    public static string ConnectionString = "server=localhost;user id=root;password=epicodus;port=3306;database=to_do_list;";
-  }
   
-  public IConfigurationRoot Configuration { get; }
+    public IConfigurationRoot Configuration { get; }
 
-  public void ConfigureServices(IServiceCollection services)
-  {
-    services.AddMvc();
-  }
-
-  public void Configure(IApplicationBuilder app)
-  {
-    app.UseDeveloperExceptionPage();
-    app.UseRouting();
-
-    app.UseEndpoints(routes =>
+    public void ConfigureServices(IServiceCollection services)
     {
-      routes.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
-    });
+      services.AddMvc();
+    }
 
-    app.UseStaticFiles();
-
-    app.Run(async (context) =>
+    public void Configure(IApplicationBuilder app)
     {
-      await context.Response.WriteAsync("Hello Everyone!");
-    });
+      app.UseDeveloperExceptionPage();
+      app.UseRouting();
+
+      app.UseEndpoints(routes =>
+      {
+        routes.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+      });
+
+      app.UseStaticFiles();
+
+      app.Run(async (context) =>
+      {
+        await context.Response.WriteAsync("Hello Everyone!");
+      });
+    }
   }
-  }
+
+
+
 }
