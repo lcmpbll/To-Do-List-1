@@ -27,6 +27,12 @@ _   _
 * _Open file in vs code_
 * _Run command dotnet restore from the ProjectName.Test folder_
 * _Run command dotent run in the top level of the project._
+*_Create a appsettings.json file in the top level of your directory with the following code: {
+    "ConnectionStrings": {
+        "DefaultConnection": "Server=localhost;Port=3306;database=to_do_list;uid=[YOUR-USER-NAME]root;pwd=[YOUR-PASSWORD-HERE];"
+    }
+}
+* _Insert your own sql password._
 
 
 
