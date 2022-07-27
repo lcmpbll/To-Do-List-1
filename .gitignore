@@ -1,7 +1,9 @@
 .DS_Store/
 *bin/
 obj/
+*/Debug/
 .vscode
 */appsettings.json
 ToDoList.Solutions/ToDoList/bin/Debug/net5.0/ToDoList.Views.pdb
 ToDoList.Solutions/ToDoList/appsettings.json
+ToDoList.Solutions/ToDoList/bin/Debug/net5.0/ToDoList.Views.dll
