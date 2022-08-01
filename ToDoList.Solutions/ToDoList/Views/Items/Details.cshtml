@@ -7,7 +7,7 @@
 <h2>Item Details</h2>
 
 <hr />
-<h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</h3>
+<h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description) | @Html.DisplayName("Task Complete :") @Html.DisplayFor(model => model.ItemComplete)</h3>
 
 @if(Model.JoinEntities.Count == 0)
 {
@@ -27,6 +27,14 @@ else
       }
     }
   </ul>
+  <h4>Mark this Item as complete/incomplete</h4>
+  @using (Html.BeginForm("MarkComplete", "Items"))
+  {
+    @Html.HiddenFor(model => model.ItemId)
+    @Html.Label("Task Complete?")
+    @Html.EditorFor(model => model.ItemComplete)
+    <button type="submit" class="btn btn-success" value = "Save">Change complete</button>
+  }
 }
 
 <p>@Html.ActionLink("Back to List", "Index")</p>
