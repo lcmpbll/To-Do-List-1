@@ -60,6 +60,9 @@ namespace ToDoList.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<bool>("ItemComplete")
+                        .HasColumnType("tinyint(1)");
+
                     b.HasKey("ItemId");
 
                     b.ToTable("Items");
