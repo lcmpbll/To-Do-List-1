@@ -12,6 +12,7 @@ namespace ToDoList.Models
     }
     public string Description { get; set; }
     public int ItemId { get; set; }
+    public bool ItemComplete { get; set; }
     
     public virtual ICollection<CategoryItem> JoinEntities { get; }
   
