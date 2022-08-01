@@ -9,7 +9,7 @@
 {
   @Html.LabelFor(model => model.Description)
   @Html.TextBoxFor(model => model.Description)
-
+  @Html.HiddenFor(model => model.ItemComplete, new { type="bool", value = "false" })
   @Html.Label("Select Category")
   @Html.DropDownList("CategoryId")
   <input type="submit" value="Add new task" class="btn btn-default" />
