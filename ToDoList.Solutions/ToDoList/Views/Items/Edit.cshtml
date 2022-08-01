@@ -12,8 +12,11 @@
 {
   @Html.HiddenFor(model => model.ItemId)
 
-  @Htmml.LabelFor(mdoel => model.Description)
+  @Html.LabelFor(model => model.Description)
   @Html.EditorFor(model => model.Description)
+
+  @Html.Label("Select Category")
+  @Html.DropDownList("CategoryId")
 
   <input type="submit" value="Save" />
 
